@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://css.gg/css");
+@font-face {
+  font-family: misaki;
+  src: url("./misaki_ttf_2021-05-05/misaki_gothic_2nd.ttf");
+}
+.body-class {
+  background-color: #409fd5;
+}
+.press-start-2 {
+  font-family: "Press Start 2P", cursive;
+}
+.misaki {
+  font-family: misaki;
+}

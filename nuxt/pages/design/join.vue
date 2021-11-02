@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="text-center text-5xl mt-10 press-start-2">GAMETITLE</h1>
-    <Home />
+    <h1 class="press-start-2 text-center text-5xl mt-10">Join Room</h1>
+    <JoinRoom />
   </div>
 </template>
 
@@ -10,5 +10,3 @@ import Vue from "vue";
 
 export default Vue.extend({});
 </script>
-
-<style></style>

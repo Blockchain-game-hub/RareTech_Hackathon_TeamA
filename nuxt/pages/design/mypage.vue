@@ -1,12 +1,7 @@
 <template>
-  <div>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
-    />
-
-    <div class="absolute inset-y-3 left-10 w-8">
-      <button type="button" class="nes-btn w-32 h-24">Return to Home</button>
+  <div class="press-start-2 relative">
+    <div class="absolute inset-y-3 left-20 w-8">
+      <i class="gg-arrow-left-o"></i>
     </div>
     <div class="press-start-2p text-5xl text-center mt-10">MY PAGE</div>
 
@@ -23,12 +18,8 @@ export default Vue.extend({
 });
 </script>
 
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-.press-start-2p {
-  font-family: "Press Start 2P", cursive;
-}
-.body-class {
-  background-color: #409fd5;
+<style scoped>
+.gg-arrow-left-o {
+  --ggs: 3;
 }
 </style>

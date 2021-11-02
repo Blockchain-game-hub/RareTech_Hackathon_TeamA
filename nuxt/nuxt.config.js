@@ -17,11 +17,17 @@ export default {
     bodyAttrs: {
       class: "body-class",
     },
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "StyleSheet",
+        href: "https://unpkg.com/nes.css@2.3.0/css/nes.min.css",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ["./assets/css/index.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],

@@ -21,6 +21,16 @@
         >マイページ</nuxt-link
       >
     </div>
+    <div class="flex justify-center">
+      <nuxt-link to="design/select" class="font-extrabold center"
+        >セレクト画面</nuxt-link
+      >
+    </div>
+    <div class="flex justify-center">
+      <nuxt-link to="design/join" class="font-extrabold center"
+        >ルーム参加画面</nuxt-link
+      >
+    </div>
   </div>
 </template>
 
@@ -30,8 +40,4 @@ import Vue from "vue";
 export default Vue.extend({});
 </script>
 
-<style>
-.body-class {
-  background-color: #409fd5;
-}
-</style>
+<style></style>

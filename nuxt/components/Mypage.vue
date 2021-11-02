@@ -1,11 +1,7 @@
 <template>
-  <div class="flex flex-col mt-32">
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
-    />
+  <div class="flex flex-col mt-32 press-start-2">
     <div class="flex justify-center">
-      <div class="nes-container is-dark with-title w-1/2">
+      <div class="nes-container is-dark with-title w-1/2 press-start-2">
         <p class="title">Match Results</p>
         <p>Battles</p>
         <p>1st</p>
@@ -28,9 +24,4 @@ import Vue from "vue";
 export default Vue.extend({});
 </script>
 
-<style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-.press-start-2p {
-  font-family: "Press Start 2P", cursive;
-}
-</style>
+<style scoped></style>

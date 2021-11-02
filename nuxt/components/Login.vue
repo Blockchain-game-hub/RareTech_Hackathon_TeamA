@@ -30,7 +30,16 @@
           mb-9
         "
       >
-        <div class="text-center w-full font-bold text-3xl text-gray-600 p-4">
+        <div
+          class="
+            press-start-2
+            text-center
+            w-full
+            font-bold
+            text-3xl text-gray-600
+            p-4
+          "
+        >
           LOGIN
         </div>
         <div class="w-full bg-gray-200 my-3" style="height: 1px"></div>
@@ -166,7 +175,6 @@
   </div>
 </template>
 <script>
-import "@fontsource/bungee-shade";
 export default {};
 </script>
 <style></style>
