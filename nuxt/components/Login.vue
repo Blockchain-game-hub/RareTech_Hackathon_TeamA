@@ -7,7 +7,8 @@
         flex flex-col
         justify-center
         items-center
-        -mt-8
+        -mt-10
+        press-start-2
       "
     >
       <div
@@ -26,8 +27,9 @@
           h-screen
           sm:h-auto
           py-8
-          rounded-lg
           mb-9
+          nes-container
+          is-rounded
         "
       >
         <div

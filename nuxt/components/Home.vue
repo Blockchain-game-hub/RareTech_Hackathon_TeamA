@@ -1,14 +1,21 @@
 <template>
-  <div>
-    <div class="flex flex-col mt-32">
+  <div class="flex justify-center mt-10">
+    <div class="flex flex-col mt-32 nes-container is-rounded is-dark w-5/6">
       <div class="flex justify-center">
         <button
-          class="nes-btn is-primary w-2/6 h-20 press-start-2p press-start-2"
+          class="
+            nes-btn
+            is-primary
+            w-2/6
+            h-20
+            press-start-2p press-start-2
+            mt-8
+          "
         >
           CREATE ROOM
         </button>
       </div>
-      <div class="flex justify-center mt-16">
+      <div class="flex justify-center mt-16 -mb-8">
         <button
           class="nes-btn is-primary w-2/6 h-20 press-start-2p press-start-2"
         >

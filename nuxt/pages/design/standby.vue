@@ -4,9 +4,9 @@
       <div class="absolute inset-y-3 left-20 w-8">
         <i class="gg-arrow-left-o"></i>
       </div>
-      <h1 class="press-start-2 text-center text-5xl mt-10">Join Room</h1>
+      <h1 class="press-start-2 text-center text-5xl mt-10">StandBy ...</h1>
     </div>
-    <JoinRoom />
+    <StandBy />
   </div>
 </template>
 

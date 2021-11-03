@@ -31,6 +31,16 @@
         >ルーム参加画面</nuxt-link
       >
     </div>
+    <div class="flex justify-center">
+      <nuxt-link to="design/standby" class="font-extrabold center"
+        >スタンバイ画面</nuxt-link
+      >
+    </div>
+    <div class="flex justify-center">
+      <nuxt-link to="design/draw" class="font-extrabold center"
+        >お絵かき画面</nuxt-link
+      >
+    </div>
   </div>
 </template>
 

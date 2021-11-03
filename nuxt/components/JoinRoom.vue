@@ -14,10 +14,6 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-center mt-32">
-      <i class="gg-log-out"></i>
-      <p class="press-start-2 mt-16">EXIT</p>
-    </div>
   </div>
 </template>
 
@@ -26,9 +22,3 @@ import Vue from "vue";
 
 export default Vue.extend({});
 </script>
-
-<style scoped>
-.gg-log-out {
-  --ggs: 5;
-}
-</style>

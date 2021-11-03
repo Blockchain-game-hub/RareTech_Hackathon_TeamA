@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="flex flex-col mt-20">
-      <div class="flex justify-center">
+  <div class="flex justify-center mt-20">
+    <div class="flex flex-col mt-20 nes-container is-rounded is-dark w-5/6">
+      <div class="flex justify-center mt-8">
         <button class="nes-btn is-primary w-2/6 h-20 misaki text-2xl">
           記事300本ノック 初級
         </button>
@@ -17,13 +17,9 @@
         </button>
       </div>
       <div class="flex justify-center mt-8">
-        <button class="nes-btn is-primary w-2/6 h-20 misaki text-2xl">
+        <button class="nes-btn is-primary w-2/6 h-20 misaki text-2xl mb-8">
           過去動画
         </button>
-      </div>
-      <div class="flex justify-center mt-20">
-        <i class="gg-log-out"></i>
-        <p class="press-start-2 mt-14">EXIT</p>
       </div>
     </div>
   </div>
