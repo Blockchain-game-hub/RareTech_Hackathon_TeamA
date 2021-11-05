@@ -41,6 +41,16 @@
         >お絵かき画面</nuxt-link
       >
     </div>
+    <div class="flex justify-center">
+      <nuxt-link to="design/result" class="font-extrabold center"
+        >リザルト画面</nuxt-link
+      >
+    </div>
+    <div class="flex justify-center">
+      <nuxt-link to="design/review" class="font-extrabold center"
+        >復習画面</nuxt-link
+      >
+    </div>
   </div>
 </template>
 

@@ -1,32 +1,73 @@
 <template>
   <div>
-    <main>
-      <div>
-        <canvas
-          class="bg-white"
-          id="gameCanvas"
-          ref="gameCanvas"
-          @mousemove="draw"
-          @mousedown="dragStart"
-          @mouseup="dragEnd"
-          @mouseout="dragEnd"
-        ></canvas>
+    <div class="relative">
+      <main>
+        <div class="flex justify-center ml-32">
+          <canvas
+            class="bg-white nes-container is-rounded"
+            id="gameCanvas"
+            ref="gameCanvas"
+            @mousemove="draw"
+            @mousedown="dragStart"
+            @mouseup="dragEnd"
+            @mouseout="dragEnd"
+          ></canvas>
+        </div>
+      </main>
+      <div class="absolute top-0 ml-10">
+        <i class="snes-jp-logo -mt-2 ml-10"></i>
+        <div
+          class="
+            flex flex-col
+            w-32
+            nes-container
+            is-rounded
+            bg-white
+            items-center
+          "
+        >
+          <button
+            class="nes-btn mt-3"
+            @click="penMode"
+            :class="{ modeOn: isPenMode }"
+          >
+            <i class="gg-pen mb-2 ml-1 mr-1"></i>
+          </button>
+          <button
+            class="nes-btn mt-3"
+            @click="eraserMode"
+            :class="{ modeOn: isPenMode == false }"
+          >
+            <i class="gg-erase -ml-1"></i>
+          </button>
+          <input
+            class="mt-3"
+            type="color"
+            id="color"
+            v-model="lineStatus.color"
+          />
+          <div class="mt-3 ml-4">
+            <input
+              class="press-start-2"
+              type="number"
+              min="1"
+              max="10"
+              id="line-width"
+              v-model="lineStatus.lineWidth"
+            />
+          </div>
+
+          <button class="mt-3 p-2 nes-btn" @click="dargRedo">
+            <i class="gg-redo"></i>
+          </button>
+          <button class="mt-3 p2 nes-btn" @click="dargUndo">
+            <i class="gg-undo"></i>
+          </button>
+          <button class="mt-3 nes-btn is-error press-start-2" @click="allClear">
+            clear
+          </button>
+        </div>
       </div>
-    </main>
-    <div>
-      <input type="color" id="color" v-model="lineStatus.color" />
-      <input
-        type="number"
-        min="1"
-        max="10"
-        id="line-width"
-        v-model="lineStatus.lineWidth"
-      />
-      <button class="nes-btn" @click="penMode">pen</button>
-      <button class="nes-btn" @click="eraserMode">eraser</button>
-      <button @click="dargRedo">進む</button>
-      <button @click="dargUndo">戻る</button>
-      <button @click="allClear">全消し</button>
     </div>
   </div>
 </template>
@@ -52,12 +93,12 @@ export default defineComponent({
       color: "black",
     });
     const canvasDefultStatus = {
-      width: 1000,
+      width: 900,
       height: 400,
     };
 
     // canvasの情報,初期値null
-    const context = ref<CanvasRenderingContext2D>();
+    const context = ref<CanvasRenderingContext2D | any>();
 
     onMounted(() => {
       //   canvasの初期値を代入
@@ -76,17 +117,17 @@ export default defineComponent({
 
     // 1.2絵を描く関数(描画中)
     const draw = (e: any) => {
-      let x = e.layerX;
-      let y = e.layerY;
+      let x = e.layerX - 23;
+      let y = e.layerY - 20;
       if (!isDrag) return;
       context.value.lineTo(x, y);
       context.value.stroke();
     };
 
     // 1.3 描画開始
-    const dragStart = (e) => {
-      let x = e.layerX;
-      let y = e.layerY;
+    const dragStart = (e: any) => {
+      let x = e.layerX - 23;
+      let y = e.layerY - 20;
       isDrag = true;
       //   3.1 元に戻すボタン用にimageDataを保存しておく
       positionStack.undoDataStack.push(
@@ -106,8 +147,8 @@ export default defineComponent({
         canvasDefultStatus.width,
         canvasDefultStatus.height
       );
-      //   3.5戻る機能 制限 10回まで 以降削除
-      if (positionStack.undoDataStack.length >= 10) {
+      //   3.5戻る機能 制限 30回まで 以降削除
+      if (positionStack.undoDataStack.length >= 30) {
         positionStack.undoDataStack.pop();
       }
       //   3.10 進む用の配列を空にしておく
@@ -115,7 +156,7 @@ export default defineComponent({
 
       //   色変更
       //   モード変更
-      if (canvasMode === "pen") {
+      if (isPenMode.value) {
         context.value.strokeStyle = lineStatus.color;
       } else {
         context.value.strokeStyle = "#FFFFFF";
@@ -131,14 +172,14 @@ export default defineComponent({
     };
 
     // 2.0モード変更 pen or 消しゴム
-    let canvasMode: string = "pen";
+    const isPenMode = ref<boolean>(true);
     // 2.1 penモードに変更
     const penMode = () => {
-      canvasMode = "pen";
+      isPenMode.value = true;
     };
     // 2.2 消しゴムモードに変更
     const eraserMode = () => {
-      canvasMode = "eraser";
+      isPenMode.value = false;
     };
 
     // 3.0 1コ進む,1コ戻る機能
@@ -185,8 +226,8 @@ export default defineComponent({
 
     // 4.0全て消す
     const allClear = () => {
-      const confilm = confirm("本当に全て消しますか？");
-      if (confirm) {
+      const verification = confirm("本当に全て消しますか？");
+      if (verification) {
         context.value.clearRect(
           0,
           0,
@@ -206,7 +247,14 @@ export default defineComponent({
       dargUndo,
       dargRedo,
       allClear,
+      isPenMode,
     };
   },
 });
 </script>
+
+<style scoped>
+.modeOn {
+  background-color: rgba(141, 134, 134, 0.555);
+}
+</style>

@@ -150,6 +150,7 @@
                   ease-in-out
                 "
               >
+                <i class="gg-google mr-4"></i>
                 Sign-in with Google
               </button>
               <button
@@ -167,6 +168,7 @@
                   ease-in-out
                 "
               >
+                <i class="gg-twitter mr-4 ml-4"></i>
                 Sign-in with Twitter
               </button>
             </div>
