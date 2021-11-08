@@ -8,15 +8,15 @@
     <div class="flex justify-center mt-16">
       <div class="inline-flex space-x-32">
         <div class="flex-1">
-          <div class="flex justify-center">
+          <nuxt-Link to="/home" class="flex justify-center">
             <i class="gg-home-alt mt-4 items-center"></i>
-          </div>
+          </nuxt-Link>
           <br />
           <p class="w-32 text-center mt-4 press-start-2 text-white text-xl">
             Home
           </p>
         </div>
-        <div class="flex-1">
+        <nuxt-Link to="/standby" class="flex-1">
           <div class="flex justify-center">
             <i class="gg-redo"></i>
           </div>
@@ -24,8 +24,8 @@
           <p class="w-28 text-center mt-7 press-start-2 text-white text-xl">
             Rematch
           </p>
-        </div>
-        <div class="flex-1">
+        </nuxt-Link>
+        <nuxt-Link to="/review" class="flex-1">
           <div class="flex justify-center">
             <i class="gg-notes"></i>
           </div>
@@ -33,7 +33,7 @@
           <p class="w-36 text-center mt-6 misaki text-white text-xl">
             間違えた問題を復習
           </p>
-        </div>
+        </nuxt-Link>
       </div>
     </div>
   </div>

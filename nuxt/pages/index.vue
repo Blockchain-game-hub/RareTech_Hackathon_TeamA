@@ -1,55 +1,36 @@
 <template>
   <div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/login" class="font-extrabold center"
-        >ログイン画面</nuxt-link
-      >
+    <div>
+      <h1 class="text-center text-5xl mt-10 press-start-2">GAMETITLE</h1>
+      <Home class="anim-box" />
     </div>
 
-    <div class="flex justify-center">
-      <nuxt-link to="design/register" class="font-extrabold center"
-        >新規登録画面</nuxt-link
-      >
-    </div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/home" class="font-extrabold center"
-        >ホーム画面</nuxt-link
-      >
-    </div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/mypage" class="font-extrabold center"
-        >マイページ</nuxt-link
-      >
-    </div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/select" class="font-extrabold center"
-        >セレクト画面</nuxt-link
-      >
-    </div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/join" class="font-extrabold center"
-        >ルーム参加画面</nuxt-link
-      >
-    </div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/standby" class="font-extrabold center"
-        >スタンバイ画面</nuxt-link
-      >
-    </div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/draw" class="font-extrabold center"
-        >お絵かき画面</nuxt-link
-      >
-    </div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/result" class="font-extrabold center"
-        >リザルト画面</nuxt-link
-      >
-    </div>
-    <div class="flex justify-center">
-      <nuxt-link to="design/review" class="font-extrabold center"
-        >復習画面</nuxt-link
-      >
+    <div class="h-44 relative w-screen">
+      <div class="press-start-2 bg-gray-400">
+        <div class="nes-balloon from-left absolute left-40 bottom-50 bg-white">
+          <p class="">Hello World!!</p>
+        </div>
+        <i class="nes-octocat animate absolute bottom-3 left-20"></i>
+      </div>
+      <section class="message -right fadeIn">
+        <!-- Balloon -->
+
+        <div
+          class="
+            nes-balloon
+            from-right
+            absolute
+            right-40
+            bottom-50
+            press-start-2
+          "
+        >
+          <p class="w-96">Thou hast had a good night's sleep, I hope.</p>
+        </div>
+        <nuxt-link to="/quiz_answer">
+          <i class="nes-kirby absolute bottom-3 right-20"></i>
+        </nuxt-link>
+      </section>
     </div>
   </div>
 </template>
@@ -60,4 +41,39 @@ import Vue from "vue";
 export default Vue.extend({});
 </script>
 
-<style></style>
+<style scoped>
+.fadeIn {
+  animation-name: fadeInAnime;
+  animation-fill-mode: backwards;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-delay: 0.5s;
+  animation-direction: normal;
+}
+
+/*1で解説*/
+@keyframes fadeInAnime {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.anim-box {
+  animation: zoomIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+</style>

@@ -77,7 +77,9 @@
               />
             </div>
             <div class="w-full flex justify-center">
-              <button
+              <nuxt-Link
+                to="/"
+                tag="button"
                 class="
                   border border-indigo-500
                   hover:bg-indigo-500 hover:text-white
@@ -107,7 +109,7 @@
                   />
                 </svg>
                 Sign-up
-              </button>
+              </nuxt-Link>
             </div>
             <div class="my-2 flex flex-row justify-center">
               <span class="absolute bg-white px-4">or</span>
@@ -150,6 +152,9 @@
                 <i class="gg-twitter mr-4 ml-4"></i>
                 Sign-up with Twitter
               </button>
+              <nuxt-Link to="/login" class="text-xs text-center -mb-8"
+                >return to login page</nuxt-Link
+              >
             </div>
           </div>
         </form>

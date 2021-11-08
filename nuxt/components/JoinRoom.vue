@@ -9,7 +9,9 @@
           <div class="nes-field is-inline mt-10">
             <label for="inline_field ">RoomID</label>
             <input type="text" id="inline_field" class="nes-input is-success" />
-            <button type="button" class="nes-btn is-success">Join</button>
+            <nuxt-Link tag="button" to="/standby" class="nes-btn is-success"
+              >Join</nuxt-Link
+            >
           </div>
         </div>
       </div>

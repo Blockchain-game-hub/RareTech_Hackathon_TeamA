@@ -66,7 +66,9 @@
               />
             </div>
             <div class="w-full flex flex-row gap-2">
-              <button
+              <nuxt-Link
+                to="/"
+                tag="button"
                 class="
                   border border-indigo-500
                   hover:bg-indigo-500 hover:text-white
@@ -97,8 +99,10 @@
                   />
                 </svg>
                 Login
-              </button>
-              <button
+              </nuxt-Link>
+              <nuxt-Link
+                to="register"
+                tag="button"
                 class="
                   border border-indigo-500
                   hover:bg-indigo-500 hover:text-white
@@ -128,7 +132,7 @@
                   />
                 </svg>
                 Sign-up
-              </button>
+              </nuxt-Link>
             </div>
             <div class="my-2 flex flex-row justify-center">
               <span class="absolute bg-white px-4">or</span>

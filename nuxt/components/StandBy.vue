@@ -10,7 +10,9 @@
       </div>
 
       <div class="mt-6 flex justify-center">
-        <button type="button" class="nes-btn is-success">GAME STRAT</button>
+        <nuxt-Link to="/draw" tag="button" class="nes-btn is-success"
+          >GAME STRAT</nuxt-Link
+        >
       </div>
 
       <div class="flex justify-center mt-4">
@@ -20,9 +22,12 @@
             <span class="mr-4">1111111111</span>
             <i class="gg-copy mt-2"></i>
           </div>
-          <div class="mt-3 text-center">
-            <span class="text-xl mr-4">url</span>
-            <span><a href="#">http://localhost:3000/standby</a> </span>
+          <div class="flex justify-center ml-6">
+            <div class="mt-3 text-center inline-flex">
+              <span class="text-xl inline flex-1 mr-6">url</span>
+              <p class="inline flex-1 mr-6">http://localhost:3000/standby</p>
+              <i class="gg-copy mt-2 flex-1"></i>
+            </div>
           </div>
         </div>
       </div>

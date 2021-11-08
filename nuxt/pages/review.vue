@@ -21,7 +21,7 @@
           </div>
         </nuxt-link>
 
-        <div class="flex-1">
+        <nuxt-Link to="/standby" class="flex-1">
           <div class="flex justify-center">
             <i class="gg-redo"></i>
           </div>
@@ -29,7 +29,7 @@
           <p class="w-28 text-center mt-7 press-start-2 text-white text-xl">
             Rematch
           </p>
-        </div>
+        </nuxt-Link>
       </div>
     </div>
   </div>

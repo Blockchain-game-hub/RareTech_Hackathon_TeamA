@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center mt-10">
     <div class="flex flex-col mt-32 nes-container is-rounded is-dark w-5/6">
-      <div class="flex justify-center">
+      <nuxt-Link tag="div" to="/select" class="flex justify-center">
         <button
           class="
             nes-btn
@@ -14,22 +14,31 @@
         >
           CREATE ROOM
         </button>
-      </div>
-      <div class="flex justify-center mt-16 -mb-8">
+      </nuxt-Link>
+      <nuxt-Link tag="div" to="/join" class="flex justify-center mt-16 -mb-8">
         <button
           class="nes-btn is-primary w-2/6 h-20 press-start-2p press-start-2"
         >
           JOIN ROOM
         </button>
-      </div>
+      </nuxt-Link>
       <div class="mt-16 flex justify-center">
         <div class="flex-row">
-          <button class="nes-btn is-primary w-60 h-14 m-10 press-start-2">
+          <nuxt-Link
+            tag="button"
+            to="/mypage"
+            class="nes-btn is-primary w-60 h-14 m-10 press-start-2"
+          >
             MY PAGE
-          </button>
-          <button class="nes-btn is-primary w-60 h-14 m-10 press-start-2">
+          </nuxt-Link>
+
+          <nuxt-Link
+            tag="button"
+            to="/login"
+            class="nes-btn is-primary w-60 h-14 m-10 press-start-2"
+          >
             LOG OUT
-          </button>
+          </nuxt-Link>
         </div>
       </div>
     </div>
