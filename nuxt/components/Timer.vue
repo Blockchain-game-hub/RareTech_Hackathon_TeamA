@@ -6,23 +6,27 @@
   </div>
 </template>
 
-<script>
-import Vue from "vue";
+<script lang="ts">
+import { ref, defineComponent, onMounted } from "@nuxtjs/composition-api";
 
-export default Vue.extend({
-  data() {
+export default defineComponent({
+  setup(pops, context) {
+    const timer = ref<number>(60);
+
+    onMounted(() => {
+      const countdownTimer = () => {
+        if (timer.value > 0) {
+          timer.value--;
+          setTimeout(countdownTimer, 100);
+        } else if (timer.value === 0) {
+          context.emit("modal");
+        }
+      };
+      countdownTimer();
+    });
     return {
-      timer: 60,
+      timer,
     };
-  },
-  mounted() {
-    const countdownTimer = () => {
-      if (this.timer > 0) {
-        this.timer--;
-        setTimeout(countdownTimer, 1000);
-      }
-    };
-    countdownTimer();
   },
 });
 </script>
