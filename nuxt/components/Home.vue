@@ -32,13 +32,12 @@
             MY PAGE
           </nuxt-Link>
 
-          <nuxt-Link
-            tag="button"
-            to="/login"
+          <button
             class="nes-btn is-primary w-60 h-14 m-10 press-start-2"
+            @click="logout"
           >
             LOG OUT
-          </nuxt-Link>
+          </button>
         </div>
       </div>
     </div>
@@ -47,8 +46,21 @@
 
 <script lang="ts">
 import Vue from "vue";
+import firebase from '@nuxtjs/firebase'
 
-export default Vue.extend({});
+
+export default Vue.extend({
+  data() {
+    return {
+      User: this.$store.state.authUser
+    }
+  },
+  methods: {
+    async logout() {
+      await this.$fire.auth.signOut()
+    },
+  },
+});
 </script>
 
 <style scoped></style>

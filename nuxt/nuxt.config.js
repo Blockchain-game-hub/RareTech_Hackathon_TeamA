@@ -48,6 +48,31 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    '@nuxtjs/dotenv',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: process.env.apiKey,
+          authDomain: process.env.authDomain,
+          databaseURL: process.env.databaseURL,
+          projectId: process.env.projectId,
+          storageBucket: process.env.storageBucket,
+          messagingSenderId: process.env.messagingSenderId,
+          appId: process.env.appId,
+          measurementId: process.env.measurementId
+        },
+        services: {
+          auth: {
+            persistence: 'local',
+            initialize: {
+              onAuthStateChangedAction: 'onAuthStateChanged',
+            },
+            ssr: true
+          }
+        }
+      }
+    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
