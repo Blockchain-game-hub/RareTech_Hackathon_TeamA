@@ -8,7 +8,7 @@
     <div class="flex justify-center mt-16">
       <div class="inline-flex space-x-32">
         <div class="flex-1">
-          <nuxt-Link to="/home" class="flex justify-center">
+          <nuxt-Link to="/" class="flex justify-center">
             <i class="gg-home-alt mt-4 items-center"></i>
           </nuxt-Link>
           <br />
