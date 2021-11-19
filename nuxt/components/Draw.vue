@@ -149,6 +149,7 @@ export default defineComponent({
           canvasDefultStatus.height
         )
       );
+      console.log(positionStack.undoDataStack);
       context.value.beginPath();
       context.value.lineTo(x, y);
       context.value.stroke();
@@ -229,6 +230,7 @@ export default defineComponent({
             canvasDefultStatus.height
           )
         );
+
         //   3.8redoDataStackからイメージデータを取得 描画
         let imageData = positionStack.redoDataStack.pop();
         context.value.putImageData(imageData, 0, 0);

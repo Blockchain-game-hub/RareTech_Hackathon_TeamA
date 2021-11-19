@@ -10,7 +10,7 @@
       </div>
 
       <div class="mt-6 flex justify-center">
-        <nuxt-Link to="/draw" tag="button" class="nes-btn is-success"
+        <nuxt-Link to="game/draw" tag="button" class="nes-btn is-success"
           >GAME STRAT</nuxt-Link
         >
       </div>
