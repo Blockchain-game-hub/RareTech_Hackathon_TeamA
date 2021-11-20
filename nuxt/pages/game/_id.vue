@@ -73,8 +73,6 @@ export default defineComponent({
       } else if (this.$route.params.id == 2) {
         this.$router.push({ params: { id: 3 } });
       } else if (this.$route.params.id == 3) {
-        this.$router.push({ params: { id: 4 } });
-      } else if (this.$route.params.id == 4) {
         this.$router.push("draw");
       }
     },
