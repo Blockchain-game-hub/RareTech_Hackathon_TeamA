@@ -1,7 +1,12 @@
 <template>
   <div>
     <BackButton />
-    <div class="press-start-2 text-5xl text-center mt-10">MY PAGE</div>
+    <div
+      v-if="User != null"
+      class="press-start-2 text-5xl text-center mt-10"
+    >
+      {{ User.displayName }} PAGE
+      </div>
 
     <Mypage />
   </div>
@@ -10,5 +15,12 @@
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({});
+export default Vue.extend({
+  middleware: "auth",
+  data() {
+    return {
+      User: this.$store.state.authUser
+    }
+  }
+});
 </script>

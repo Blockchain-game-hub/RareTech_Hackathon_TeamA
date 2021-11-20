@@ -10,9 +10,16 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/firebase": "^8.0.0",
+    "@types/howler": "^2.2.4",
     "core-js": "^3.15.1",
+    "firebase": "^9.4.1",
+    "howler": "^2.2.3",
     "nes.css": "^2.3.0",
     "nuxt": "^2.15.7",
+    "socket.io": "^4.3.2",
+    "socket.io-client": "^4.3.2",
     "svg-progress-bar": "^0.1.17"
   },
   "devDependencies": {

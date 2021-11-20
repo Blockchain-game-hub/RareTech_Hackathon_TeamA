@@ -8,7 +8,7 @@
     <div class="h-44 relative w-screen">
       <div class="press-start-2 bg-gray-400">
         <div class="nes-balloon from-left absolute left-40 bottom-50 bg-white">
-          <p class="">Hello World!!</p>
+          <p class="">Hello, {{ User.displayName }}!!</p>
         </div>
         <i class="nes-octocat animate absolute bottom-3 left-20"></i>
       </div>
@@ -38,7 +38,14 @@
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({});
+export default Vue.extend({
+  middleware: "auth",
+  data() {
+    return {
+      User: this.$store.state.authUser
+    }
+  }
+});
 </script>
 
 <style scoped>

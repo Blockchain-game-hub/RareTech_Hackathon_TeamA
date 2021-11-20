@@ -153,6 +153,8 @@
                   duration-100
                   ease-in-out
                 "
+                type="button"
+                @click="signInWithGoogle"
               >
                 <i class="gg-google mr-4"></i>
                 Sign-in with Google
@@ -183,6 +185,19 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+      async signInWithGoogle() {
+        const provider = new this.$fireModule.default.auth.GoogleAuthProvider();
+        await this.$fire.auth.signInWithPopup(provider).then(res => {
+          res.user.getIdToken(true).then(idToken => {
+            localStorage.setItem('access_token', idToken.toString())
+            localStorage.setItem('refresh_token', res.user.refreshToken.toString())
+          })
+        })
+        console.log('成功しました')
+      },
+  }
+};
 </script>
 <style></style>

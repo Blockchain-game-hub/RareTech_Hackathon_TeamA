@@ -79,6 +79,7 @@ import {
   reactive,
   ref,
 } from "@nuxtjs/composition-api";
+import io from 'socket.io-client'
 
 interface positionStack {
   redoDataStack: any[];
@@ -86,7 +87,18 @@ interface positionStack {
 }
 
 export default defineComponent({
-  setup() {
+  props: {
+    io: {
+      type: io,
+      required: true
+    }
+  },
+  data() {
+    return {
+      socket: ''
+    }
+  },
+  setup(socket) {
     //   線の情報、初期値
     const lineStatus = reactive({
       lineWidth: 5,
@@ -99,7 +111,6 @@ export default defineComponent({
 
     // canvasの情報,初期値null
     const context = ref<CanvasRenderingContext2D | any>();
-
     onMounted(() => {
       //   canvasの初期値を代入
       const canvas = <HTMLCanvasElement>document.getElementById("gameCanvas");
