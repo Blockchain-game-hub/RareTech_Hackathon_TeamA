@@ -59,6 +59,7 @@
 import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
+  middleware: "auth",
   methods: {
     showModal() {
       this.$modal.show("modal");
